@@ -118,19 +118,13 @@ export default function Login() {
               }
             />
 
-            <button
-              type="button"
-              onClick={() =>
-                setShowPassword(!showPassword)
-              }
-              className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-700"
-            >
-              {showPassword ? (
-                <EyeOff size={19} />
-              ) : (
-                <Eye size={19} />
-              )}
-            </button>
+           <button
+  type="submit"
+  disabled={loading}
+  className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-3 rounded-xl font-bold transition shadow-lg shadow-blue-600/20"
+>
+  {loading ? "Signing in..." : "Sign In"}
+</button>
           </div>
         </label>
 
