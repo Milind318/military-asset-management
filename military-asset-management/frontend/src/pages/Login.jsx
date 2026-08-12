@@ -128,12 +128,7 @@ export default function Login() {
           </div>
         </label>
 
-        <button
-          disabled={loading}
-          className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white py-3 rounded-xl font-bold transition shadow-lg shadow-blue-600/20"
-        >
-          {loading ? "Signing in..." : "Sign In"}
-        </button>
+        
 
         {/* Demo accounts */}
         <div className="mt-6 bg-slate-50 rounded-xl p-4">
