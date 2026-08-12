@@ -9,18 +9,27 @@ export function AuthProvider({ children }) {
   );
 
   const login = async (username, password) => {
+    console.log("LOGIN FUNCTION CALLED");
+    console.log("Username:", username);
+
     const { data } = await api.post("/auth/login", {
       username,
-      password
+      password,
     });
+
+    console.log("LOGIN RESPONSE:", data);
 
     localStorage.setItem("token", data.token);
     localStorage.setItem("user", JSON.stringify(data.user));
+
     setUser(data.user);
+
+    return data;
   };
 
   const logout = () => {
-    localStorage.clear();
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setUser(null);
   };
 
